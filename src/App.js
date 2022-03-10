@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import MovieCard from './MovieCard'
+import MovieFilter from './MovieFilter'
+import MovieList from './MovieList'
+import './App.css'
+ const movies = [
+  {   id:Math.random(),
+      title :"saw",
+      description:"Director: James Wan · Producer , Horror and thriller",
+      posterURl:"",
+      rating: 3 ,
+  },
+  {    id:Math.random(),
+      title :"spiderman",
+      description:" Director: Sam Raimi · Producer: Ian , Action and fantasy",
+      posterURl:"",
+      rating: 4 ,
+  } ,
+  {    id:Math.random(),
+      title :" before sunset",
+      description:"Director: Richard Linklater · Producer: Anne Walker-McBay , Romance and Drama",
+      posterURl:"",
+      rating:3 ,
+  }
+]
 
-function App() {
+
+
+const App = () => {
+  const [movie, setMovie] = useState(movies)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div className='App'>
 
-export default App;
+ <MovieList  movie={movie}/>
+
+
+      </div>
+  
+  )
+}
+ 
+export default App
